@@ -1,0 +1,12 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@foreach(var product in Model.Products)
+{
+    <partial name="_ProductPartial"
+             model="product"
+             view-data='@new ViewDataDictionary(ViewData) { { "Param1", "abc" }, { "Param2", "def" } }' />
+}
